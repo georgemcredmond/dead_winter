@@ -1,5 +1,5 @@
 # dead_winter
-Java-based zombie apocalypse roll playing / table top style game
+Java-based zombie apocalypse role playing / table top style game
 
 
 DeadWinter.java is the application and should be compiled and executed.
