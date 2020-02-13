@@ -13,24 +13,61 @@ public class DeadWinter
 
 		while(response == 1)
 		{
-			PlayerChar myChar = new PlayerChar();
+			charSelect();
 
-			System.out.println();
-			System.out.println("Character Stats:");
-			System.out.println();
-			System.out.println("Name:" + myChar.getName());
-			System.out.println("Occupation:" + myChar.getOcc());
-			System.out.println("Influence:" + myChar.getInfluence());
-			System.out.println("Attack:" + myChar.getAttack());
-			System.out.println("Search:" + myChar.getSearch());
-			System.out.println("Ability:" + myChar.getAbility());
-			System.out.println();
-
-			System.out.print("Press 1 to create another character, or any other number to quit");
+			System.out.print("Press 1 to re-start the game, or any other number to quit");
 			response = input.nextInt();
 		}
 
 		System.out.println("Thank you for playing....");
 
+	}
+
+	public static void charSelect() 
+	{		
+
+			PlayerChar primaryChar;
+
+			PlayerChar myChar1 = new PlayerChar();
+
+			System.out.println();
+			System.out.println("Character Stats:");
+			System.out.println();
+			System.out.println("Name:" + myChar1.getName());
+			System.out.println("Occupation:" + myChar1.getOcc());
+			System.out.println("Influence:" + myChar1.getInfluence());
+			System.out.println("Attack:" + myChar1.getAttack());
+			System.out.println("Search:" + myChar1.getSearch());
+			System.out.println("Ability:" + myChar1.getAbility());
+			System.out.println();
+
+			PlayerChar myChar2 = new PlayerChar();
+
+			if(myChar1.getName() == myChar2.getName())
+			{
+				myChar2 = new PlayerChar();
+			}
+
+			System.out.println();
+			System.out.println("Character Stats:");
+			System.out.println();
+			System.out.println("Name:" + myChar2.getName());
+			System.out.println("Occupation:" + myChar2.getOcc());
+			System.out.println("Influence:" + myChar2.getInfluence());
+			System.out.println("Attack:" + myChar2.getAttack());
+			System.out.println("Search:" + myChar2.getSearch());
+			System.out.println("Ability:" + myChar2.getAbility());
+			System.out.println();
+
+			if(myChar1.getInfluence() > myChar2.getInfluence())
+			{
+				primaryChar = myChar1;
+			} else {
+				primaryChar = myChar2;
+			}
+
+			System.out.println();
+			System.out.println("Your primary character is: " + primaryChar.getName());
+			System.out.println();
 	}
 }
