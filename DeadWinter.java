@@ -4,10 +4,11 @@ public class DeadWinter
 {
 	public static void main(String[] args)
 	{
+		// variables and constants
 		int response;
-
 		Scanner input = new Scanner(System.in);
 
+		// initital input phase
 		System.out.print("Welcome. Press 1 to create a character, any other number to quit");
 		response = input.nextInt();
 
@@ -19,6 +20,7 @@ public class DeadWinter
 			response = input.nextInt();
 		}
 
+		// app final output upon quitting
 		System.out.println("Thank you for playing....");
 
 	}
@@ -42,7 +44,10 @@ public class DeadWinter
 			System.out.println();
 
 			PlayerChar myChar2 = new PlayerChar();
-
+			
+			// check to see if the 2nd character chosen is the same as 1st
+			// if so, re-construct a new character for the myChar2 variable
+			// this can definitely be improved maybe by removing the index from the players array??
 			if(myChar1.getName() == myChar2.getName())
 			{
 				myChar2 = new PlayerChar();
@@ -59,6 +64,7 @@ public class DeadWinter
 			System.out.println("Ability:" + myChar2.getAbility());
 			System.out.println();
 
+			// character with the highest influence becomes the primary character for the player
 			if(myChar1.getInfluence() > myChar2.getInfluence())
 			{
 				primaryChar = myChar1;
